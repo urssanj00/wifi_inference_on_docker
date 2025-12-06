@@ -3,6 +3,9 @@ services:
   har_inference:
     build: .
     container_name: har_container
+    image: har_inference:latest
     command: ["/app/src/real_time_inference.py", "/app", "wifi_project", "har_config.properties", "False"]
     volumes:
       - .:/app
+    ports:
+      - "6001:6001"
